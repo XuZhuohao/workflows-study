@@ -1,0 +1,45 @@
+
+#
+POST {{baseUrl}}/repos/{{owner}}/{{repo}}/git/blobs
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+Accept: application/vnd.github.v3+json
+
+{"content":"content"}
+
+
+### Create a release
+POST {{baseUrl}}/repos/{{owner}}/{{repo}}/releases
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+Accept: application/vnd.github.v3+json
+
+{
+  "tag_name": "worlkflows-v1",
+  "name": "worlkflows-v1",
+  "body": "intro worlkflows-v1 is test github's api",
+  "draft": true
+}
+
+### Get a release
+GET {{baseUrl}}/repos/{{owner}}/{{repo}}/releases/40523139
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+Accept: application/vnd.github.v3+json
+
+### 40523139
+### https://uploads.github.com/repos/XuZhuohao/workflows-study/releases/40523139/assets{?name,label}
+
+### Upload
+POST {{uploadUrl}}/repos/{{owner}}/{{repo}}/releases/40523139/assets?name=worlkflows-v1&label=v1
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+Authorization: Bearer {{access_token}}
+Accept: application/vnd.github.v3+json
+
+--WebAppBoundary
+Content-Disposition: form-data; name="field-name" filename="file.txt"
+
+< ../../target/workflows-0.0.1-SNAPSHOT.war
+--WebAppBoundary--
+
+###
