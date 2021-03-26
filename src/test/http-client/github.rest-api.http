@@ -31,7 +31,7 @@ Accept: application/vnd.github.v3+json
 ### https://uploads.github.com/repos/XuZhuohao/workflows-study/releases/40523139/assets{?name,label}
 
 ### Upload
-POST {{uploadUrl}}/repos/{{owner}}/{{repo}}/releases/40523139/assets?name=worlkflows-v1&label=v1
+POST {{uploadUrl}}/repos/{{owner}}/{{repo}}/releases/40523139/assets?name=worlkflows-v1.war&label=v1
 Content-Type: multipart/form-data; boundary=WebAppBoundary
 Authorization: Bearer {{access_token}}
 Accept: application/vnd.github.v3+json
