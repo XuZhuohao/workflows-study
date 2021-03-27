@@ -7,9 +7,7 @@ on:
   push:
     # 类型为标签创建完成
     tags: 
-      - *
-
-env:
+      - "*"
 
 # 根据上下文 github.ref $GITHUB_REF
 jobs:
