@@ -3,11 +3,11 @@ name: deploy-releases-tagged
 
 # 触发条件
 on:
-  # 标签事件
-  label:
+  # 推送事件
+  push:
     # 类型为标签创建完成
-    types: [created]
-    branches: [master]
+    tags: 
+      - *
 
 env:
 
@@ -18,6 +18,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: echo env paran
+        run: echo $GITHUB_REF
+        
       - name: checkout project
         uses: actions/checkout@v2
         with:
