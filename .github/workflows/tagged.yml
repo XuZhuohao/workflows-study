@@ -9,6 +9,7 @@ on:
     tags: 
       - "*"
 
+
 # 根据上下文 github.ref $GITHUB_REF
 jobs:
   build-project:
@@ -41,7 +42,7 @@ jobs:
             -X POST \
             -H 'Content-Type: application/json' \
             -H 'Content-Type: application/vnd.github.v3+json' \
-            -H 'Authorization: Bearer ${{access_token}}' \
+            -H 'Authorization: Bearer ${{secrets.ACCESS_TOKEN}}' \
             -d '{"tag_name":"worlkflows-$GITHUB_REF","name":"worlkflows-$GITHUB_REF","body":"GitHub Actions Auto Builder at $(date +'%Y-%m-%d %H:%M:%S') version:$GITHUB_REF'sapi","draft":true}' \
             https://api.github.com/repos/XuZhuohao/workflows-study/releases \
 
