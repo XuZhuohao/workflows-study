@@ -45,7 +45,7 @@ jobs:
             -H 'Content-Type: application/json' \
             -H 'Content-Type: application/vnd.github.v3+json' \
             -H 'Authorization: Bearer ${{secrets.ACCESS_TOKEN}}' \
-            -d '{"tag_name":"worlkflows-${{github.ref}}","name":"worlkflows-${{github.ref}}","body":"GitHub Actions Auto Builder at $(date +'%Y-%m-%d %H:%M:%S') version:${{github.ref}}'sapi","draft":true}' \
+            -d '{"tag_name":"worlkflows-${{github.ref}}","name":"worlkflows-${{github.ref}}","body":"GitHub Actions Auto Builder at $(date +'%Y-%m-%d %H:%M:%S') version:${{github.ref}} sapi","draft":true}' \
             https://api.github.com/repos/XuZhuohao/workflows-study/releases \
             > result.json
           echo result.json
